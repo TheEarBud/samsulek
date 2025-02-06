@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "jeelee-fish",
+    "staging": "jeelee-fish"
+  },
+  "targets": {},
+  "etags": {}
+}

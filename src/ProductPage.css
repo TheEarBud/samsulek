@@ -1,0 +1,365 @@
+/* General Reset */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  margin-top: 10vh !important;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.product-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+  gap: 50px; /* Professional spacing between sections */
+}
+
+/* Image Section */
+.product-images {
+  flex: 1;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px; /* Space between main image and thumbnails */
+}
+
+.main-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.thumbnail-images {
+  display: flex;
+  gap: 15px; /* Professional spacing between thumbnails */
+  flex-wrap: wrap;
+  justify-content: center; /* Center thumbnails */
+}
+
+.thumbnail-images img {
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.thumbnail-images img.active {
+  border-color: #007bff;
+}
+
+.thumbnail-images img:hover {
+  border-color: #555;
+}
+
+/* Product Details Section */
+.product-details {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Professional spacing between elements */
+  padding-top: 20px; /* Shift details slightly down */
+}
+
+.product-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.product-description {
+  font-size: 18px;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+.product-price {
+  font-size: 28px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Quantity Selector */
+/* Quantity Selector */
+/* Quantity Selector */
+.quantity-selector {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px; /* Add spacing between quantity selector and Add to Cart button */
+}
+
+.quantity-selector button {
+  background-color: #f8f8f8; /* Light gray background */
+  color: #000; /* Black text */
+  border: 2px solid #000; /* Black border */
+  border-radius: 50%; /* Circular buttons */
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quantity-selector button:hover {
+  background-color: #e0e0e0; /* Slightly darker gray on hover */
+  color: #000; /* Black text remains the same */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+.quantity-selector input {
+  width: 50px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000; /* Black text */
+  border: 1px solid #ddd; /* Subtle border for input */
+  border-radius: 5px;
+  padding: 5px;
+  outline: none;
+  background: transparent; /* Transparent background */
+}
+
+.product-price{
+  color: black;
+}
+
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+  background-color: transparent;
+  color: #000;
+  border: 2px solid #000; /* Black border */
+  padding: 12px 40px; /* Adjusted padding for proportions */
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px; /* Rounded edges for pill shape */
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 20px; /* Add spacing above */
+}
+
+.add-to-cart-btn:hover {
+  background-color: #000; /* Black background on hover */
+  color: #fff; /* White text on hover */
+}
+
+/* Responsive Design */
+
+/* For Large Screens */
+@media (min-width: 1200px) {
+  .product-page {
+    padding: 60px;
+    gap: 60px;
+  }
+
+  .product-details {
+    padding-top: 40px; /* Push text further down for breathing room */
+  }
+}
+
+/* For Tablets and Medium Screens */
+@media (max-width: 1024px) {
+  .product-title {
+    font-size: 28px;
+  }
+
+  .product-description {
+    font-size: 16px;
+  }
+
+  .product-price {
+    font-size: 24px;
+  }
+
+  .quantity-selector button {
+    font-size: 14px;
+  }
+
+  .add-to-cart-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+/* For Small Screens (Phones) */
+@media (max-width: 768px) {
+  .product-page {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 40px;
+  }
+
+  .product-images {
+    max-width: 100%;
+  }
+
+  .thumbnail-images img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .product-details {
+    max-width: 100%;
+    text-align: center;
+    gap: 30px; /* Reduce gaps for smaller screens */
+  }
+
+  .product-title {
+    font-size: 24px;
+  }
+
+  .product-description {
+    font-size: 14px;
+  }
+
+  .product-price {
+    font-size: 20px;
+  }
+
+  .quantity-selector input {
+    width: 50px;
+    font-size: 14px;
+  }
+
+  .add-to-cart-btn {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+}
+
+/* For Extra Small Screens (Very Small Phones) */
+@media (max-width: 480px) {
+  .thumbnail-images img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .product-title {
+    font-size: 20px;
+  }
+
+  .product-description {
+    font-size: 12px;
+  }
+
+  .product-price {
+    font-size: 28px;
+  }
+
+  .add-to-cart-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+.price-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.original-price {
+  font-size: 1.5rem;
+  color: gray;
+  text-decoration: line-through;
+}
+
+.discounted-price {
+  font-size: 2rem;
+}
+
+.colors {
+  display: flex;
+  justify-content: center; /* Centers the color circles */
+  align-items: center;
+  gap: 1rem; /* Increase spacing for better visuals */
+  margin: 1.5rem 0;
+}
+
+.color-button {
+  width: 40px; /* Slightly larger size for better visibility */
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Adds depth */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth interactions */
+}
+
+.color-button:hover {
+  transform: scale(1.1); /* Subtle zoom effect */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12); /* Stronger shadow on hover */
+}
+
+.color-button.selected {
+  outline: 3px solid #000; /* Ensure selected color stands out */
+  outline-offset: 3px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.15); /* Highlight selected */
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  text-align: center; /* Centers the text */
+  border: 1px solid #ccc; /* Optional: Border styling */
+  border-radius: 5px; /* Optional: Rounded corners */
+  padding: 5px 10px; /* Optional: Spacing */
+}
+.quantity-selector {
+  display: flex;
+  align-items: center; /* Align items horizontally in the center */
+  justify-content: center; /* Center the entire selector horizontally */
+  gap: 1rem; /* Add space between the buttons and quantity display */
+  margin: 1rem 0; /* Add spacing around the selector */
+}
+
+.quantity-selector button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  background-color: #f9f9f9;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.quantity-selector button:hover {
+  background-color: #f0f0f0; /* Slight hover effect */
+}
+
+.quantity-display {
+  width: 50px; /* Fixed width for consistent alignment */
+  height: 40px; /* Match the button height */
+  line-height: 40px; /* Vertically align the text */
+  text-align: center; /* Center text horizontally */
+  font-size: 1.2rem; /* Match button text size */
+  font-weight: bold;
+  border: 1px solid #ccc; /* Add a border for consistency */
+  border-radius: 50%; /* Smooth edges */
+  background-color: #fff;
+  margin: 1px;
+}
