@@ -368,19 +368,19 @@ const FeaturesSection = () => {
         "Let ActiveBuds help you with your academic questions! Solve academic problems professionally.",
     },
     {
-      icon: "./working.png", // Path to your image for "For Working"
+      icon: "./public/Working.png", // Path to your image for "For Working"
       title: "For Working",
       description:
         "Let ActiveBuds be your business assistant! They boost inspiration and improve work & output efficiency.",
     },
     {
-      icon: "./planning.png", // Path to your image for "For Planning"
+      icon: "./public/planning.png", // Path to your image for "For Planning"
       title: "For Planning",
       description:
         "Ask ActiveBuds to suggest a travel plan for you! Get advice on travel planning, easier travel, and itineraries.",
     },
     {
-      icon: "./fun.png", // Path to your image for "For Fun..."
+      icon: "./public/fun.png", // Path to your image for "For Fun..."
       title: "For Fun...",
       description:
         "Ask ActiveBuds anything that pops into your head! E.g., why does popcorn pop? Plan a party, or suggest a gift!",
