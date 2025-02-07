@@ -38,9 +38,24 @@ function App() {
   };
 
   const handleNavigation = (path) => {
+    // Store the current path in localStorage to persist the state across refreshes
+    localStorage.setItem('currentPath', path);
+  
+    // Set the state for showing content based on the path
     setShowContent(path === '/App');
+  
+    // Navigate to the path (without triggering a full page reload)
     navigate(path);
   };
+  
+  // On initial render, check the stored path in localStorage and restore the state
+  useEffect(() => {
+    const savedPath = localStorage.getItem('currentPath');
+    if (savedPath) {
+      setShowContent(savedPath === '/App');
+      navigate(savedPath); // Navigate to the saved path to avoid page reload
+    }
+  }, [navigate]);
 
   const handleLogin = () => {
     setIsLoggedIn(true);
@@ -466,11 +481,11 @@ const Footer = ({handleNavigation}) => {
             <ul className="list-unstyled">
               <li className="mb-2">
                 <i className="bi bi-envelope-fill me-2" style={{ color: '#FF69B4' }}></i>
-                official.theearbud@gmail.com
+                official.ear.bud@gmail.com
               </li>
               <ul>
     <li className="mb-2">
-        <a href="https://www.tiktok.com/@the_ear_bud" className="text-black bi bi-telephone-fill me-2" style={{ color: '#FF69B4' }} target="_blank" rel="noopener noreferrer">
+        <a href="https://www.tiktok.com/@theearbud" className="text-black bi bi-telephone-fill me-2" style={{ color: '#FF69B4' }} target="_blank" rel="noopener noreferrer">
             TikTok
         </a>
     </li>
@@ -480,7 +495,7 @@ const Footer = ({handleNavigation}) => {
         </a>
     </li>
     <li>
-        <a href="https://www.youtube.com/@The_Ear_Bud" className="text-black bi bi-geo-alt-fill me-2" style={{ color: '#FF69B4' }} target="_blank" rel="noopener noreferrer">
+        <a href="https://www.youtube.com/channel/UCSCO5q9S8n5DtND6uIeWDvg" className="text-black bi bi-geo-alt-fill me-2" style={{ color: '#FF69B4' }} target="_blank" rel="noopener noreferrer">
             YouTube
         </a>
     </li>
