@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import {BrowserRouter as Router, useNavigate, Routes, Route, Link, Navigate, BrowserRouter } from 'react-router-dom';
+import { useNavigate, Routes, Route, Link, Navigate, BrowserRouter } from 'react-router-dom';
 import './App.css';
 import PayPal from './Components/PayPal.jsx';
 import OurStory from './OurStory.jsx';
@@ -224,7 +224,6 @@ function App() {
         </div>
       )}
 
-      <Router basename='/TheEarBud/samesulek'>
       <Routes>
         <Route path="/App" element={<Home />} />
         <Route path="/login" element={<Login handleLogin={handleLogin} />} />
@@ -239,7 +238,6 @@ function App() {
         <Route path="/ShippingPolicy" element={<ShippingPolicy />} />
         <Route path="/TermsOfService" element={<TermsOfService />} />
       </Routes>
-      </Router>
       <Footer handleNavigation={handleNavigation}/>
     </div>
   );
