@@ -43,16 +43,17 @@ const SignUpForm = () => {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
+      // Store user info in Firestore
       await setDoc(doc(db, 'users', user.uid), {
         firstName,
         lastName,
         email,
-        password, // Storing password in Firestore (not recommended)
         imageUrl,
         uid: user.uid,
       });
 
-      navigate('/login');
+      // Redirect to the account page after successful signup
+      navigate('/account');
     } catch (err) {
       console.error(err);
       if (err.code === 'auth/email-already-in-use') {
