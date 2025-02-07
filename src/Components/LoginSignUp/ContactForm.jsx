@@ -52,6 +52,7 @@ const ContactForm = () => {
             value={formData.name}
             onChange={handleChange}
             required
+            style={{color: "black"}}
           />
           <input
             type="email"
@@ -60,6 +61,7 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleChange}
             required
+            style={{color: "black"}}
           />
         </div>
         <div>
@@ -69,6 +71,7 @@ const ContactForm = () => {
             placeholder="Phone Number"
             value={formData.phone}
             onChange={handleChange}
+            style={{color: "black"}}
           />
         </div>
         <div>
@@ -78,6 +81,7 @@ const ContactForm = () => {
             value={formData.message}
             onChange={handleChange}
             rows="5"
+            style={{color: "black"}}
           ></textarea>
         </div>
         <button type="submit">
