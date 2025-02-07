@@ -466,7 +466,7 @@ const Footer = ({handleNavigation}) => {
             <ul className="list-unstyled">
               <li className="mb-2">
                 <i className="bi bi-envelope-fill me-2" style={{ color: '#FF69B4' }}></i>
-                official.ear.bud@gmail.com
+                official.theearbud@gmail.com
               </li>
               <ul>
     <li className="mb-2">
