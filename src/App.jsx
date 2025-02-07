@@ -305,7 +305,10 @@ function Product({ image, h1, p, price, discount, originalPrice, classnamee, nav
   return (
     <div className={`card ${classnamee} shadow-sm mb-4`} style={styles.card}>
       <a href={navigationlink} className="position-relative">
-        <img src={currentImage} alt={h1} className="card-img-top" />
+      <Link to="/ikko-active-buds" onClick={() => handleNavigation('/ikko-active-buds')}>
+      <img src={currentImage} alt={h1} className="card-img-top" />
+</Link>
+
         {discount && (
           <span
             style={styles.discountBadge}
@@ -368,19 +371,19 @@ const FeaturesSection = () => {
         "Let ActiveBuds help you with your academic questions! Solve academic problems professionally.",
     },
     {
-      icon: "./public/Working.png", // Path to your image for "For Working"
+      icon: "./Working.png", // Path to your image for "For Working"
       title: "For Working",
       description:
         "Let ActiveBuds be your business assistant! They boost inspiration and improve work & output efficiency.",
     },
     {
-      icon: "./public/planning.png", // Path to your image for "For Planning"
+      icon: "./planning.png", // Path to your image for "For Planning"
       title: "For Planning",
       description:
         "Ask ActiveBuds to suggest a travel plan for you! Get advice on travel planning, easier travel, and itineraries.",
     },
     {
-      icon: "./public/fun.png", // Path to your image for "For Fun..."
+      icon: "./fun.png", // Path to your image for "For Fun..."
       title: "For Fun...",
       description:
         "Ask ActiveBuds anything that pops into your head! E.g., why does popcorn pop? Plan a party, or suggest a gift!",
