@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, Routes, Route, Link, Navigate, Router } from 'react-router-dom';
+import { useNavigate, Routes, Route, Link, Navigate, BrowserRouter } from 'react-router-dom';
 import PayPal from './Components/PayPal.jsx';
 import OurStory from './OurStory.jsx';
 import ContactForm from './Components/LoginSignUp/ContactForm.jsx';
@@ -15,7 +15,7 @@ import TermsOfService from './TermsOfService.jsx';
 
 function Router() {
   return (
-    <Router basename="/TheEarBud/samsulek">
+    <BrowserRouter>
       <Routes>
       <Route path="/App" element={<Home />} />
         <Route path="/login" element={<Login handleLogin={handleLogin} />} />
@@ -30,7 +30,7 @@ function Router() {
         <Route path="/ShippingPolicy" element={<ShippingPolicy />} />
         <Route path="/TermsOfService" element={<TermsOfService />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 
