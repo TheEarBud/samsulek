@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './SignUpForm.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate, Link } from 'react-router-dom';
-import { auth, db } from './firebase'; 
+import { auth, db } from './firebase';
 import { setDoc, doc } from 'firebase/firestore';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
@@ -32,6 +32,7 @@ const SignUpForm = () => {
     setLoading(true);
     setError('');
 
+    // Check if passwords match
     if (password !== confirmPassword) {
       setError('Passwords do not match!');
       setLoading(false);
@@ -52,7 +53,7 @@ const SignUpForm = () => {
         uid: user.uid,
       });
 
-      // Redirect to the account page after successful signup
+      // After successful signup, navigate to the account page
       navigate('/account');
     } catch (err) {
       console.error(err);
@@ -169,12 +170,15 @@ const SignUpForm = () => {
               />
             </div>
 
+            {/* Error message */}
             {error && <p className="text-danger">{error}</p>}
 
+            {/* Submit Button */}
             <button type="submit" className="btn btn-primary w-100" disabled={loading}>
               {loading ? 'Signing Up...' : 'Sign Up'}
             </button>
 
+            {/* Link to Login Page */}
             <p className="mt-3 text-center">
               Already have an account? 
               <Link to="/login"> Login</Link>
