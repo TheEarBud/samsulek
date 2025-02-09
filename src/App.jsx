@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, Routes, Route, Link, Navigate, BrowserRouter } from 'react-router-dom';
+import { useNavigate, Routes, Route, Link, Navigate, BrowserRouter } from 'react-router-dom'; // <-- Added Navigate import
 import './App.css';
 import PayPal from './Components/PayPal.jsx';
 import OurStory from './OurStory.jsx';
@@ -16,7 +16,7 @@ import ShippingPolicy from './ShippingPolicy.jsx';
 import TermsOfService from './TermsOfService.jsx';
 import 'bootstrap/dist/css/bootstrap.css';
 import { TypeOutline } from 'lucide-react';
-import AccountImg from '/account-removebg-preview.png'
+import AccountImg from '/account-removebg-preview.png';
 
 function App() {
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
@@ -24,6 +24,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const navigate = useNavigate();
+  const location = window.location.pathname;  // Track current path for refresh logic
 
   useEffect(() => {
     const loggedInStatus = localStorage.getItem('isLoggedIn') === 'true';
@@ -33,29 +34,19 @@ function App() {
     setCartItems(storedCart);
   }, []);
 
+  useEffect(() => {
+    // Update content visibility based on the location.pathname when the path changes
+    setShowContent(location === '/App');
+  }, [location]);  // Run whenever the location changes
+
   const toggleNavbar = () => {
     setIsNavbarVisible(!isNavbarVisible);
   };
 
   const handleNavigation = (path) => {
-    // Store the current path in localStorage to persist the state across refreshes
-    localStorage.setItem('currentPath', path);
-  
-    // Set the state for showing content based on the path
-    setShowContent(path === '/App');
-  
-    // Navigate to the path (without triggering a full page reload)
+    setShowContent(path === '/App');  // Control which content to show based on the path
     navigate(path);
   };
-  
-  // On initial render, check the stored path in localStorage and restore the state
-  useEffect(() => {
-    const savedPath = localStorage.getItem('currentPath');
-    if (savedPath) {
-      setShowContent(savedPath === '/App');
-      navigate(savedPath); // Navigate to the saved path to avoid page reload
-    }
-  }, [navigate]);
 
   const handleLogin = () => {
     setIsLoggedIn(true);
@@ -240,18 +231,22 @@ function App() {
       )}
 
       <Routes>
-        <Route path="/App" element={<Home />} />
+      <Route path="/App" element={<Home />} />
         <Route path="/login" element={<Login handleLogin={handleLogin} />} />
         <Route path="/signup" element={<SignUpForm handleLogin={handleLogin} />} />
         <Route path="/ikko-active-buds" element={<ProductPage />} />
         <Route path="/ContactForm" element={<ContactForm />} />
         <Route path="/OurStory" element={<OurStory />} />
-        <Route path="/Account" element={isLoggedIn ? <Account /> : <Navigate to="/signup" />} />
-        <Route path="/Cart" element={isLoggedIn ? <Cart /> : <Navigate to="/signup" />} />
         <Route path="/RefundPolicy" element={<RefundPolicy />} />
         <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
         <Route path="/ShippingPolicy" element={<ShippingPolicy />} />
         <Route path="/TermsOfService" element={<TermsOfService />} />
+
+        {/* Protected routes */}
+        <Route path="/Account" 
+               element={isLoggedIn ? <Account /> : <Navigate to="/login" />} />
+        <Route path="/Cart" 
+               element={isLoggedIn ? <Cart /> : <Navigate to="/login" />} />
       </Routes>
       <Footer handleNavigation={handleNavigation}/>
     </div>
@@ -392,13 +387,13 @@ const FeaturesSection = () => {
         "Let ActiveBuds be your business assistant! They boost inspiration and improve work & output efficiency.",
     },
     {
-      icon: "./planning.png", // Path to your image for "For Planning"
+      icon: "../public/planning.png", // Path to your image for "For Planning"
       title: "For Planning",
       description:
         "Ask ActiveBuds to suggest a travel plan for you! Get advice on travel planning, easier travel, and itineraries.",
     },
     {
-      icon: "./fun.png", // Path to your image for "For Fun..."
+      icon: "../public/fun.png", // Path to your image for "For Fun..."
       title: "For Fun...",
       description:
         "Ask ActiveBuds anything that pops into your head! E.g., why does popcorn pop? Plan a party, or suggest a gift!",
