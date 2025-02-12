@@ -480,7 +480,7 @@ const Footer = ({handleNavigation}) => {
               </li>
               <ul>
     <li className="mb-2">
-        <a href="https://www.tiktok.com/@theearbud" className="text-black bi bi-telephone-fill me-2" style={{ color: '#FF69B4' }} target="_blank" rel="noopener noreferrer">
+        <a href="https://www.tiktok.com/@official.the_ear_bud" className="text-black bi bi-telephone-fill me-2" style={{ color: '#FF69B4' }} target="_blank" rel="noopener noreferrer">
             TikTok
         </a>
     </li>
@@ -490,7 +490,7 @@ const Footer = ({handleNavigation}) => {
         </a>
     </li>
     <li>
-        <a href="https://www.youtube.com/channel/UCSCO5q9S8n5DtND6uIeWDvg" className="text-black bi bi-geo-alt-fill me-2" style={{ color: '#FF69B4' }} target="_blank" rel="noopener noreferrer">
+        <a href="https://www.youtube.com/@official.the_ear_bud" className="text-black bi bi-geo-alt-fill me-2" style={{ color: '#FF69B4' }} target="_blank" rel="noopener noreferrer">
             YouTube
         </a>
     </li>
