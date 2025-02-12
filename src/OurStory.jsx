@@ -7,7 +7,15 @@ const OurStory = () => {
       <h2>Our Story</h2>
       <div className="story-content">
         <p>
-          The The Ear Bud™ lamp was born out of countless hours spent searching for the perfect lighting to create a calming, serene environment. I found myself frustrated with traditional lamps that lacked the ambiance and soothing atmosphere I was yearning for, especially after long, hectic days. I wanted something that could bring a sense of tranquility to my space, so I turned to the ocean and the graceful movements of jellyfish for inspiration. After years of research and development, I created a lamp that captures the mesmerizing beauty of jellyfish, bringing a peaceful and captivating presence into any room. I’m incredibly proud to introduce to you the The Ear Bud™ lamp—a perfect blend of art, innovation, and relaxation.
+        Welcome to Ikko Active™ Buds – Where Sound Meets Serenity.
+
+The Ikko Active™ Buds were born out of countless hours spent refining the perfect listening experience to enhance your daily routine. We understand the frustration of traditional earbuds that fall short in delivering immersive sound and lasting comfort—especially when you’re on the go, working out, or just winding down after a hectic day.
+
+Inspired by the calming flow of nature and the pursuit of balance, we’ve designed the Ikko Active™ Buds to provide more than just great audio—they offer a full sensory experience. Combining sleek, ergonomic design with state-of-the-art sound technology, the Ikko Active™ Buds allow you to enjoy your favorite tunes, podcasts, and calls in high-definition clarity, while offering the perfect level of comfort for all-day wear.
+
+Whether you’re in need of an energizing soundtrack for your workout, a peaceful escape from the noise of the world, or crisp, clear communication on a call, the Ikko Active™ Buds are here to elevate your day.
+
+Proudly blending cutting-edge innovation, high-quality audio, and a commitment to your well-being, the Ikko Active™ Buds are your perfect companion for any activity.
         </p>
         <div className="image-container">
         <div className="video-container videoo">
